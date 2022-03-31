@@ -1,4 +1,4 @@
-import { Navbar, Sidebar } from 'components';
+import { Footer, Navbar, Sidebar } from 'components';
 import { Outlet } from 'react-router-dom';
 
 export function HomeLayout() {
@@ -9,6 +9,7 @@ export function HomeLayout() {
 				<Navbar />
 				<div id="app-container">
 					<Outlet />
+					<Footer />
 				</div>
 			</div>
 		</div>

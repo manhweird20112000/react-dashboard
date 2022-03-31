@@ -1,4 +1,4 @@
-import { Events, News } from 'app/modules';
+import { DashboardPage } from 'app/pages';
 import { HomeLayout } from 'layouts';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 export function HomeRoutes() {
@@ -6,8 +6,7 @@ export function HomeRoutes() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<HomeLayout />}>
-					<Route path="/news" element={<News />} />
-					<Route path="/events" element={<Events />} />
+					<Route path="/" element={<DashboardPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
