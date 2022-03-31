@@ -21,7 +21,7 @@ export const menu = [
 				label: 'Dashboard',
 				icon: <IconHome />,
 				iconActive: <IconHome fill="white" />,
-				to: '/dashboard',
+				to: '/',
 			},
 		],
 	},

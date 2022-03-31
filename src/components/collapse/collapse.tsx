@@ -1,4 +1,5 @@
 import { IconArrowDown } from 'assets/icons';
+import { IconArrowUp } from 'assets/icons/icon-arrow-up';
 import { useState } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
@@ -27,18 +28,14 @@ export function Collapse(props: Props) {
 	return (
 		<div className="transition-all">
 			<div
-				style={{ backgroundColor: match ? 'red' : 'blue' }}
+				style={{ backgroundColor: match ? 'red' : 'transparent' }}
 				className="flex items-center justify-between p-2 cursor-pointer my-1"
 				onClick={() => handleCollapse()}>
 				<div className="flex items-center">
 					{icon ? <span className="mr-2">{icon}</span> : <></>}
-					<span>{label}</span>
+					<span className="font-semibold">{label}</span>
 				</div>
-				{type === 'COLLAPSE' && (
-					<div>
-						<IconArrowDown />
-					</div>
-				)}
+				{type === 'COLLAPSE' && (hide ? <IconArrowUp /> : <IconArrowDown />)}
 			</div>
 			{hide && <div className="my-1">{children}</div>}
 		</div>

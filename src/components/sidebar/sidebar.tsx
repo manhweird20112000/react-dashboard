@@ -22,7 +22,7 @@ export function Sidebar() {
 									key={child.id}
 									label={child.label}
 									icon={child.icon}
-									onPress={() => console.log(child)}
+									to={child.to}
 								/>
 							))
 						) : (
