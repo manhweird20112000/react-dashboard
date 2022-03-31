@@ -15,11 +15,14 @@ export function CollapseItem(props: Props) {
 	}
 	return (
 		<div
-			style={{ backgroundColor: match ? 'green' : 'transparent' }}
+			style={{ opacity: match ? 1 : 0.8 }}
 			onClick={() => handleCollapse()}
-			className="collapse-item px-2 flex items-center p-2 hover:bg-white cursor-pointer rounded-lg">
+			className="collapse-item px-2 flex my-1.5 items-center p-2  cursor-pointer rounded-lg relative">
 			{icon ? <span className="mr-2">{icon}</span> : <></>}{' '}
-			<span className="font-semibold">{label}</span>
+			<span className="font-medium text-white">{label}</span>
+			{match && (
+				<div className="w-[3px] bg-white h-7 rounded-xl absolute top-1/2 -translate-y-1/2 right-1"></div>
+			)}
 		</div>
 	);
 }

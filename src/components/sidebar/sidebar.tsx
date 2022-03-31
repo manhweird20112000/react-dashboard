@@ -5,11 +5,12 @@ import './styles.scss';
 
 export function Sidebar() {
 	return (
-		<div id="sidebar" className="bg-pink-300 p-2">
+		<div id="sidebar" style={{ backgroundColor: '#0061F7' }} className="p-2">
 			<div className="logo"></div>
 			<div>
 				{menu.map((item) => (
 					<Collapse
+						icon={item.icon}
 						to={item.to}
 						label={item.label}
 						key={item.id}

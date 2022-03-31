@@ -1,7 +1,7 @@
-import { IconArrowDown } from 'assets/icons';
-import { IconArrowUp } from 'assets/icons/icon-arrow-up';
+import { IconArrowDown, IconArrowUp } from 'assets/icons';
 import { useState } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
+import './styles.scss';
 
 interface Props {
 	children?: React.ReactNode;
@@ -28,14 +28,26 @@ export function Collapse(props: Props) {
 	return (
 		<div className="transition-all">
 			<div
-				style={{ backgroundColor: match ? 'red' : 'transparent' }}
-				className="flex items-center justify-between p-2 cursor-pointer my-1"
+				className="collapse flex items-center justify-between p-2 cursor-pointer rounded-lg my-1.5 relative"
 				onClick={() => handleCollapse()}>
 				<div className="flex items-center">
-					{icon ? <span className="mr-2">{icon}</span> : <></>}
-					<span className="font-semibold">{label}</span>
+					{icon ? (
+						<span style={{ opacity: match ? 1 : 0.8 }} className="mr-2">
+							{icon}
+						</span>
+					) : (
+						<></>
+					)}
+					<span
+						style={{ opacity: match ? 1 : 0.8 }}
+						className="font-medium text-base text-white">
+						{label}
+					</span>
 				</div>
 				{type === 'COLLAPSE' && (hide ? <IconArrowUp /> : <IconArrowDown />)}
+				{match && (
+					<div className="w-[3px] bg-white h-7 rounded-xl absolute top-1/2 -translate-y-1/2 right-1"></div>
+				)}
 			</div>
 			{hide && <div className="my-1">{children}</div>}
 		</div>
