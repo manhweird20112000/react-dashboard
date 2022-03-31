@@ -1,3 +1,9 @@
+import { MENU } from 'config/menu';
+
 export function Sidebar() {
-	return <div>Sidebar</div>;
+	return (
+		<div>
+			<div></div>
+		</div>
+	);
 }

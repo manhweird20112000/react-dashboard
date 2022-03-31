@@ -1,7 +1,7 @@
-import React from 'react';
+import { HomeRoutes } from 'routes';
 
 function App() {
-	return <div id="app"></div>;
+	return <HomeRoutes />;
 }
 
 export default App;
