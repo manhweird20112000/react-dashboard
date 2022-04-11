@@ -17,12 +17,10 @@ export function CollapseItem(props: Props) {
 		<div
 			style={{ opacity: match ? 1 : 0.8 }}
 			onClick={() => handleCollapse()}
-			className="collapse-item px-2 flex my-1.5 items-center p-2  cursor-pointer rounded-lg relative">
+			className="">
 			{icon ? <span className="mr-2">{icon}</span> : <></>}{' '}
-			<span className="font-medium text-white">{label}</span>
-			{match && (
-				<div className="w-[3px] bg-white h-7 rounded-xl absolute top-1/2 -translate-y-1/2 right-1"></div>
-			)}
+			<span className="">{label}</span>
+			{match && <div className="w-[1px] bg-white h-2 absolute right-0"></div>}
 		</div>
 	);
 }

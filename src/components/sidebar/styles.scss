@@ -1,7 +1,4 @@
 #sidebar {
-	@apply w-[260px] overflow-hidden p-2 h-full;
-}
-
-.logo {
-	@apply flex items-center justify-center;
+	transition: all ease 0.5s;
+	@apply xl:min-w-[15%] lg:min-w-[15%] md:min-w-[10%] min-w-full xl:relative md:relative lg:relative fixed inset-0 -translate-x-full xl:translate-x-0 lg:translate-x-0 md:translate-x-0 p-2;
 }

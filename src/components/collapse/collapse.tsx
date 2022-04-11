@@ -26,30 +26,28 @@ export function Collapse(props: Props) {
 	}
 
 	return (
-		<div className="transition-all">
+		<div className="my-2">
 			<div
-				className="collapse flex items-center justify-between p-2 cursor-pointer rounded-lg my-1.5 relative"
+				className="my-1 cursor-pointer collapse "
 				onClick={() => handleCollapse()}>
-				<div className="flex items-center">
+				<div
+					style={{ opacity: match ? 1 : 0.8 }}
+					className="flex items-center my-1 xl:justify-start lg:justify-start justify-start md:justify-center">
 					{icon ? (
-						<span style={{ opacity: match ? 1 : 0.8 }} className="mr-2">
-							{icon}
-						</span>
+						<span className="xl:mr-2 lg:mr-2 md:m-0 mr-2">{icon}</span>
 					) : (
 						<></>
 					)}
-					<span
-						style={{ opacity: match ? 1 : 0.8 }}
-						className="font-medium text-base text-white">
+					<span className="text-white font-medium text-lg block xl:block lg:block md:hidden">
 						{label}
 					</span>
 				</div>
 				{type === 'COLLAPSE' && (hide ? <IconArrowUp /> : <IconArrowDown />)}
 				{match && (
-					<div className="w-[3px] bg-white h-7 rounded-xl absolute top-1/2 -translate-y-1/2 right-1"></div>
+					<div className="w-[2px] h-6 bg-white rounded-lg absolute top-1/2  -translate-y-1/2 right-1"></div>
 				)}
 			</div>
-			{hide && <div className="my-1">{children}</div>}
+			{hide && <div className="">{children}</div>}
 		</div>
 	);
 }

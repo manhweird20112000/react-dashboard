@@ -1,5 +1,6 @@
 import { Footer, Navbar, Sidebar } from 'components';
 import { Outlet } from 'react-router-dom';
+import './styles.scss';
 
 export function HomeLayout() {
 	return (

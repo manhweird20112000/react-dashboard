@@ -5,7 +5,7 @@ import './styles.scss';
 
 export function Sidebar() {
 	return (
-		<div id="sidebar" style={{ backgroundColor: '#0061F7' }} className="p-2">
+		<div id="sidebar" style={{ backgroundColor: '#0061F7' }}>
 			<div className="logo"></div>
 			<div>
 				{menu.map((item) => (
