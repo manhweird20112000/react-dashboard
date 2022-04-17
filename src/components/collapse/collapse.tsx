@@ -1,4 +1,5 @@
 import { IconArrowDown, IconArrowUp } from 'assets/icons';
+import { theme } from 'configs';
 import { useState } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import './styles.scss';
@@ -28,7 +29,7 @@ export function Collapse(props: Props) {
 	return (
 		<div className="my-2">
 			<div
-				className="my-1 cursor-pointer collapse "
+				className="my-1 cursor-pointer collapse flex items-center justify-between"
 				onClick={() => handleCollapse()}>
 				<div
 					style={{ opacity: match ? 1 : 0.8 }}
@@ -42,8 +43,13 @@ export function Collapse(props: Props) {
 						{label}
 					</span>
 				</div>
-				{type === 'COLLAPSE' && (hide ? <IconArrowUp /> : <IconArrowDown />)}
-				{match && (
+				{type === 'COLLAPSE' &&
+					(hide ? (
+						<IconArrowUp fill={theme.whiteColor} />
+					) : (
+						<IconArrowDown fill={theme.whiteColor} />
+					))}
+				{match && type !== 'COLLAPSE' && (
 					<div className="w-[2px] h-6 bg-white rounded-lg absolute top-1/2  -translate-y-1/2 right-1"></div>
 				)}
 			</div>

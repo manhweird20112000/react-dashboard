@@ -3,9 +3,17 @@ import { CollapseItem } from 'components/collapse/collapse-item';
 import { menu } from 'configs';
 import './styles.scss';
 
-export function Sidebar() {
+interface Props {
+	isShow: Boolean;
+}
+
+export function Sidebar(props: Props) {
+	const { isShow } = props;
 	return (
-		<div id="sidebar" style={{ backgroundColor: '#0061F7' }}>
+		<div
+			id="sidebar"
+			style={{ backgroundColor: '#0061F7' }}
+			className={isShow ? 'translate-x-0' : ''}>
 			<div className="logo"></div>
 			<div>
 				{menu.map((item) => (

@@ -1,4 +1,5 @@
-import { IconHome } from 'assets/icons';
+import { IconAdmins, IconHome, IconSetting } from 'assets/icons';
+import { theme } from './theme';
 
 interface MenuType {
 	id: number;
@@ -18,16 +19,44 @@ export const menu: MenuType[] = [
 		to: '/',
 		child: [],
 		label: 'Home',
-		icon: <IconHome fill="white" />,
+		icon: <IconHome fill={theme.whiteColor} />,
 	},
 	{
-		id: 2,
-		hasChild: 0,
-		type: 'LINK',
-		to: '/post',
-		child: [],
-		label: 'Posts',
-		icon: <IconHome fill="white" />,
+		id: 3,
+		hasChild: 1,
+		type: 'COLLAPSE',
+		to: '',
+		child: [
+			{
+				id: 1,
+				label: 'Administrators',
+				type: 'LINK',
+				to: '/administrators',
+				child: [],
+				hasChild: 0,
+				icon: <IconAdmins fill={theme.whiteColor} />,
+			},
+			{
+				id: 2,
+				label: 'Group Permission',
+				type: 'LINK',
+				to: '/group-permission',
+				child: [],
+				hasChild: 0,
+				icon: <IconAdmins fill={theme.whiteColor} />,
+			},
+			{
+				id: 3,
+				label: 'Permissions',
+				type: 'LINK',
+				to: '/permissions',
+				child: [],
+				hasChild: 0,
+				icon: <IconAdmins fill={theme.whiteColor} />,
+			},
+		],
+		label: 'Setting',
+		icon: <IconSetting fill={theme.whiteColor} />,
 	},
 	// {
 	// 	id: 0,

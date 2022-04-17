@@ -14,9 +14,9 @@ export function IconArrowUp(props: Props) {
 			<path
 				d="M17 14L12 10L7 14"
 				stroke={fill}
-				stroke-width="1.5"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>
 	);

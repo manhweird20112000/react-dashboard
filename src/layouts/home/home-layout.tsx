@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { Footer, Navbar, Sidebar } from 'components';
 import { Outlet } from 'react-router-dom';
 import './styles.scss';
 
 export function HomeLayout() {
+	const [sidebar, setSidebar] = useState<Boolean>(true);
 	return (
 		<div id="app">
-			<Sidebar />
+			<Sidebar isShow={sidebar} />
 			<div
 				id="container"
 				className="min-h-full"
